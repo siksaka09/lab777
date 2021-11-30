@@ -33,9 +33,40 @@ string func3(string x){
 	return y;	
 }
 
+string fucncheck(string x,string y){
+	int i =0, L = x.size();
+	string palindrome_text;
+	while(i<L)
+	{
+		if(x[i] == y[i])
+		{
+			palindrome_text = "Yes";
+			i++;
+		}
+		else
+		{
+			palindrome_text = "No";
+			L = 0;
+		}
+
+	}
+	return palindrome_text;
+
+
+}
+
 int main(){
-    cout >> "Input text: "
-    cout >> "Reversed text: "
-    cout >> "Palindrome: "
+	string inputtext;
+	string reversetext;
+
+    cout << "Input text: ";
+	cin >> inputtext;
+	reversetext = func1(inputtext);
+    cout << "Reversed text: " << reversetext << "\n";
+
+	inputtext = func2(inputtext);
+	reversetext = func2(reversetext);
+
+    cout << "Palindrome: " << fucncheck(inputtext,reversetext);
     return 0;
 }
